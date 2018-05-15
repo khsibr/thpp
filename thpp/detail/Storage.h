@@ -176,7 +176,7 @@ template <> struct TensorOps<real> {
   }
   // Note! frees m1, m2!!!
   static void _match(THTensor* r, THTensor* m1, THTensor* m2, real gain) {
-    return THTensor_(match)(r, m1, m2, gain, 1);
+    return THTensor_(match)(r, m1, m2, gain);
   }
   static void _addmm(THTensor* r, real beta, THTensor* t, real alpha,
                     THTensor* m1, THTensor* m2) {
@@ -213,7 +213,7 @@ template <> struct TensorOps<real> {
     return THTensor_(trace)(t);
   }
   static void _cross(THTensor* r, THTensor* a, THTensor* b, int dim) {
-    return THTensor_(cross)(r, a, b, dim, 1);
+    return THTensor_(cross)(r, a, b, dim);
   }
 
 #define S1(X) #X
